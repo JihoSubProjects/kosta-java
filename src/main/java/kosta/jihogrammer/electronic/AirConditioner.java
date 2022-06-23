@@ -1,22 +1,26 @@
 package kosta.jihogrammer.electronic;
 
-public class AirConditioner extends Electronic {
+public class AirConditioner extends Electronic implements RemoteControllerAdaptor {
 
     private String brand;
-    private int verticalDegree;
+    private int temperature;
 
     public AirConditioner(String brand) {
         setBrand(brand);
     }
 
-    public void up() {
-        setVerticalDegree(getVerticalDegree() + 10);
-        System.out.println(getBrand() + " " + getVerticalDegree());
+    @Override
+    public void temperatureUp() {
+        if (!super.isPower()) throw new RuntimeException("TURN ON");
+        setTemperature(getTemperature() + 10);
+        System.out.println(getBrand() + " " + getTemperature());
     }
 
-    public void down() {
-        setVerticalDegree(getVerticalDegree() - 10);
-        System.out.println(getBrand() + " " + getVerticalDegree());
+    @Override
+    public void temperatureDown() {
+        if (!super.isPower()) throw new RuntimeException("TURN ON");
+        setTemperature(getTemperature() - 10);
+        System.out.println(getBrand() + " " + getTemperature());
     }
 
     public String getBrand() {
@@ -27,11 +31,12 @@ public class AirConditioner extends Electronic {
         this.brand = brand;
     }
 
-    public int getVerticalDegree() {
-        return verticalDegree;
+    public int getTemperature() {
+        return temperature;
     }
 
-    public void setVerticalDegree(int verticalDegree) {
-        this.verticalDegree = verticalDegree;
+    public void setTemperature(int temperature) {
+        this.temperature = temperature;
     }
+
 }

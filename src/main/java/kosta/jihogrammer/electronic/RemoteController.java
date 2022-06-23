@@ -1,5 +1,6 @@
 package kosta.jihogrammer.electronic;
 
+@Deprecated
 public class RemoteController<T extends AirConditioner> implements Switch {
     T product;
 
@@ -16,11 +17,11 @@ public class RemoteController<T extends AirConditioner> implements Switch {
     }
 
     public void up() {
-        if (product.isPower()) product.up();
+        if (product.isPower()) product.temperatureUp();
     }
 
     public void down() {
-        if (product.isPower()) product.down();
+        if (product.isPower()) product.temperatureDown();
     }
 
 }
