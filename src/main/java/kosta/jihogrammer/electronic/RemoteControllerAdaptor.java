@@ -1,6 +1,6 @@
 package kosta.jihogrammer.electronic;
 
-public interface RemoteControllerAdaptor extends Switch {
+public interface RemoteControllerAdaptor {
     void temperatureUp();
     void temperatureDown();
 }

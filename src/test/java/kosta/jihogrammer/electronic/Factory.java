@@ -34,7 +34,7 @@ public class Factory {
         RemoteController<AirConditioner> remoteController = new RemoteController<>(product);
         remoteController.turnOn();
         remoteController.up();
-        assertEquals(product.getVerticalDegree(), 10);
+        assertEquals(product.getTemperature(), 10);
     }
 
     @Test
@@ -43,7 +43,7 @@ public class Factory {
         RemoteController<AirConditioner> remoteController = new RemoteController<>(product);
         remoteController.turnOn();
         remoteController.down();
-        assertEquals(product.getVerticalDegree(), -10);
+        assertEquals(product.getTemperature(), -10);
     }
 
 }

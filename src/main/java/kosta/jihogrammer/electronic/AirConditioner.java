@@ -7,19 +7,20 @@ public class AirConditioner extends Electronic implements RemoteControllerAdapto
 
     public AirConditioner(String brand) {
         setBrand(brand);
+        setTemperature(20);
     }
 
     @Override
     public void temperatureUp() {
-        if (!super.isPower()) throw new RuntimeException("TURN ON");
-        setTemperature(getTemperature() + 10);
+        if (super.getStatus() != Status.ON) throw new RuntimeException("PLEASE TURN ON");
+        setTemperature(getTemperature() + 1);
         System.out.println(getBrand() + " " + getTemperature());
     }
 
     @Override
     public void temperatureDown() {
-        if (!super.isPower()) throw new RuntimeException("TURN ON");
-        setTemperature(getTemperature() - 10);
+        if (super.getStatus() != Status.ON) throw new RuntimeException("PLEASE TURN ON");
+        setTemperature(getTemperature() - 1);
         System.out.println(getBrand() + " " + getTemperature());
     }
 
@@ -36,7 +37,7 @@ public class AirConditioner extends Electronic implements RemoteControllerAdapto
     }
 
     public void setTemperature(int temperature) {
-        this.temperature = temperature;
+        this.temperature = temperature < 18 ? 18 : Math.min(temperature, 25);
     }
 
 }

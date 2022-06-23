@@ -17,11 +17,11 @@ public class RemoteController<T extends AirConditioner> implements Switch {
     }
 
     public void up() {
-        if (product.isPower()) product.temperatureUp();
+        if (product.getStatus() != Status.ON) product.temperatureUp();
     }
 
     public void down() {
-        if (product.isPower()) product.temperatureDown();
+        if (product.getStatus() != Status.ON) product.temperatureDown();
     }
 
 }
