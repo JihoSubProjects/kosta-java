@@ -1,4 +1,8 @@
-package kosta.jihogrammer.electronic;
+package kosta.jihogrammer.electronic.remote_controller;
+
+import kosta.jihogrammer.electronic.model.Status;
+import kosta.jihogrammer.electronic.model.Switch;
+import kosta.jihogrammer.electronic.air_conditioner.AirConditioner;
 
 @Deprecated
 public class RemoteController<T extends AirConditioner> implements Switch {

@@ -1,4 +1,4 @@
-package kosta.jihogrammer.electronic;
+package kosta.jihogrammer.electronic.air_conditioner;
 
 public class SamsungAirConditioner extends AirConditioner {
     public SamsungAirConditioner() {

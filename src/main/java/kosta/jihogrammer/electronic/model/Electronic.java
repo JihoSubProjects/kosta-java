@@ -1,4 +1,4 @@
-package kosta.jihogrammer.electronic;
+package kosta.jihogrammer.electronic.model;
 
 public abstract class Electronic implements Switch {
 

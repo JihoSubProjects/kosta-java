@@ -1,5 +1,9 @@
 package kosta.jihogrammer.electronic;
 
+import kosta.jihogrammer.electronic.air_conditioner.AirConditioner;
+import kosta.jihogrammer.electronic.air_conditioner.SamsungAirConditioner;
+import kosta.jihogrammer.electronic.model.Electronic;
+import kosta.jihogrammer.electronic.remote_controller.RemoteController;
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 

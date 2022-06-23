@@ -1,4 +1,8 @@
-package kosta.jihogrammer.electronic;
+package kosta.jihogrammer.electronic.air_conditioner;
+
+import kosta.jihogrammer.electronic.model.Electronic;
+import kosta.jihogrammer.electronic.remote_controller.RemoteControllerAdaptor;
+import kosta.jihogrammer.electronic.model.Status;
 
 public class AirConditioner extends Electronic implements RemoteControllerAdaptor {
 

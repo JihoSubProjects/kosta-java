@@ -1,4 +1,4 @@
-package kosta.jihogrammer.electronic;
+package kosta.jihogrammer.electronic.model;
 
 public interface Switch {
     void turnOn();
