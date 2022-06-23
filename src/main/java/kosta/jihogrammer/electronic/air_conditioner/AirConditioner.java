@@ -6,7 +6,6 @@ import kosta.jihogrammer.electronic.model.Status;
 
 public abstract class AirConditioner extends Electronic implements RemoteControllerAdaptor {
 
-    private String brand;
     private int temperature;
 
     public AirConditioner() {

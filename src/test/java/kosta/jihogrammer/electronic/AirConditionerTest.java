@@ -1,13 +1,9 @@
 package kosta.jihogrammer.electronic;
 
-import kosta.jihogrammer.electronic.air_conditioner.AirConditioner;
-
-import kosta.jihogrammer.electronic.air_conditioner.LGAirConditioner;
-import kosta.jihogrammer.electronic.air_conditioner.SamsungAirConditioner;
+import kosta.jihogrammer.electronic.air_conditioner.*;
 import kosta.jihogrammer.electronic.model.Status;
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.DisplayName;
-import org.junit.jupiter.api.Test;
+
+import org.junit.jupiter.api.*;
 import static org.junit.jupiter.api.Assertions.*;
 
 @DisplayName("에어컨 테스트")
@@ -21,7 +17,7 @@ class AirConditionerTest {
         ac = new AirConditioner() {
             @Override
             public String getBrand() {
-                return "KOSTA";
+                return BRAND;
             }
         };
     }
