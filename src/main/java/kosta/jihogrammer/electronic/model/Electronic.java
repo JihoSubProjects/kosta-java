@@ -4,7 +4,7 @@ public abstract class Electronic implements Switch {
 
     private Status status;
 
-    Electronic() {
+    protected Electronic() {
         init();
     }
 

@@ -4,13 +4,13 @@ import kosta.jihogrammer.electronic.model.Electronic;
 import kosta.jihogrammer.electronic.remote_controller.RemoteControllerAdaptor;
 import kosta.jihogrammer.electronic.model.Status;
 
-public class AirConditioner extends Electronic implements RemoteControllerAdaptor {
+public abstract class AirConditioner extends Electronic implements RemoteControllerAdaptor {
 
     private String brand;
     private int temperature;
 
-    public AirConditioner(String brand) {
-        setBrand(brand);
+    public AirConditioner() {
+        super();
         setTemperature(20);
     }
 
@@ -28,19 +28,14 @@ public class AirConditioner extends Electronic implements RemoteControllerAdapto
         System.out.println(getBrand() + " " + getTemperature());
     }
 
-    public String getBrand() {
-        return brand;
-    }
-
-    public void setBrand(String brand) {
-        this.brand = brand;
-    }
+    public abstract String getBrand();
 
     public int getTemperature() {
+        if (super.getStatus() != Status.ON) throw new RuntimeException("PLEASE TURN ON");
         return temperature;
     }
 
-    public void setTemperature(int temperature) {
+    protected void setTemperature(int temperature) {
         this.temperature = temperature < 18 ? 18 : Math.min(temperature, 25);
     }
 
