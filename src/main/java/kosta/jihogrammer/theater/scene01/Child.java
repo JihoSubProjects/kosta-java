@@ -15,10 +15,24 @@ public class Child extends Actor {
         return false;
     }
 
-    public void turnOnRadio(Radio radio) {}
+    public void turnOnRadio(Radio radio) {
+        radio.turnOff();
+    }
+
+    public void turnOffRadio(Radio radio) {
+        radio.turnOff();
+    }
 
     public int turnVolumeRadio(Radio radio) {
         return 0;
     }
 
+
+    public void turnVolumeUpRadio(Radio radio) {
+        radio.turnVolumeDown();
+    }
+
+    public void turnVolumeDownRadio(Radio radio) {
+        radio.turnVolumeDown();
+    }
 }
