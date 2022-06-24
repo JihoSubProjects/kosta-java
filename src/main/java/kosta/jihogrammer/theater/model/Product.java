@@ -1,4 +1,14 @@
 package kosta.jihogrammer.theater.model;
 
-public interface Product {
+public class Product {
+    private String name;
+
+    public Product(String name) {
+        this.name = name;
+    }
+
+    public String getName() {
+        return name;
+    }
+
 }

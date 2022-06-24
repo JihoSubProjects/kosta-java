@@ -4,33 +4,37 @@ import kosta.jihogrammer.theater.model.Actor;
 
 public class Mom extends Actor {
 
-    public Mom(String name) {
+    private String childName;
+
+    public Mom(String name, String childName) {
         super(name);
+        this.childName = childName;
     }
 
     // 1. 아이가 라디오를 켤 수 있는지 물어보는 장면
     public boolean askRadioPower(LivingRoom room) {
+        say("My sweet, can you turn on the radio?");
         return room
-                .callChild("Ruby")
+                .callChild(childName)
                 .canYouTurnOnRadio(room.requestRadio());
     }
 
     // 2.1. 아이에게 라디오를 켜달라고 요청하는 장면
     public void adjustTurnOnRadio(LivingRoom room) {
-        room.callChild("Ruby").turnOnRadio(room.requestRadio());
+        room.callChild(childName).turnOnRadio(room.requestRadio());
     }
 
     // 2.2. 아이에게 라디오를 꺼달라고 요청하는 장면
     public void adjustTurnOffRadio(LivingRoom room) {
-        room.callChild("Ruby").turnOffRadio(room.requestRadio());
+        room.callChild(childName).turnOffRadio(room.requestRadio());
     }
 
     // 3. 아이에게 라디오 볼륨 조정을 부탁하는 장면
-    public void askTurnVolumeUp(LivingRoom room) {
-        room.callChild("Ruby").turnVolumeUpRadio(room.requestRadio());
+    public void adjustTurnVolumeUp(LivingRoom room) {
+        room.callChild(childName).turnVolumeUpRadio(room.requestRadio());
     }
-    public void askTurnVolumeDown(LivingRoom room) {
-        room.callChild("Ruby").turnVolumeDownRadio(room.requestRadio());
+    public void adjustTurnVolumeDown(LivingRoom room) {
+        room.callChild(childName).turnVolumeDownRadio(room.requestRadio());
     }
 
     // 4. 라디오 볼륨을 확인하는 장면

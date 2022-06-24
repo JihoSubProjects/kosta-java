@@ -1,20 +1,24 @@
 package kosta.jihogrammer.theater.scene01;
 
+import kosta.jihogrammer.theater.model.Actor;
+import kosta.jihogrammer.theater.model.Product;
 import kosta.jihogrammer.theater.model.Stage;
 
+import java.util.HashMap;
 import java.util.Map;
 
-public class LivingRoom implements Stage {
+public class LivingRoom extends Stage {
 
-    private Map<String, Child> children;
-    private Radio radio;
+    public LivingRoom() {
+        super();
+    }
 
     public Child callChild(String name) {
-        return children.get(name);
+        return (Child) actors.get(name);
     }
 
     public Radio requestRadio() {
-        return radio;
+        return (Radio) products.get("radio");
     }
 
 }

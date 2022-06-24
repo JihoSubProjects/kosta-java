@@ -12,6 +12,11 @@ public class Child extends Actor {
     }
 
     public boolean canYouTurnOnRadio(Radio radio) {
+        if (age >= 5) {
+            say("Awe, okay.");
+            return true;
+        }
+        say("Oh, I can not.");
         return false;
     }
 
