@@ -20,10 +20,11 @@ public class SceneTurnVolumeRadio implements Scene {
             Tommy.adjustTurnVolumeUp(room);
             Tommy.adjustTurnOffRadio(room);
         } else {
-            Tommy.turnOnRadio(radio);
-            Tommy.turnVolumeUpRadio(room);
-            Tommy.turnOffRadio(room);
+            Tommy.turnOn(radio);
+            Tommy.volumeUp(radio);
+            Tommy.turnOff(radio);
         }
+
     }
 
 }
